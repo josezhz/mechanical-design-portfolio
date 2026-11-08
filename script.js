@@ -26,10 +26,10 @@ const projects = {
     intro: "A folding panel assembly built around a repeating hinged frame. Expanded and folded configurations explore the relationship between panel arrangement, supporting links and the platform below.",
     tags: ["Deployable mechanism", "Repeated linkages", "CAD motion study"],
     media: [
-      { label: "Unfold–fold loop", type: "gif", src: "assets/solar-unfold-fold.gif", poster: "assets/solar-loop-poster.png", alt: "Solar-panel mechanism unfolding and folding in a continuous loop", caption: "Continuous unfold–fold cycle, approximately 8 seconds. The original motion plays forward and then backward; the upper view shows the frame and the lower view includes the panels." },
+      { label: "Unfold–fold loop", type: "gif", src: "assets/solar-unfold-fold.gif?v=2", poster: "assets/solar-loop-poster.png?v=2", alt: "Solar-panel mechanism unfolding and folding in a continuous loop", caption: "Continuous unfold–fold cycle, approximately 2.8 seconds. The updated panel animation runs at 1.5× speed, with brief pauses at each change of direction." },
       { label: "Expanded", type: "cad", src: "assets/solar-expanded.png", alt: "Expanded array of blue solar panels supported above a quadrotor frame", caption: "Expanded configuration: repeated panels form a broad surface above the supporting platform." },
       { label: "Folded", type: "cad", src: "assets/solar-folded.png", alt: "Folded panel array revealing the linked frame and quadrotor platform", caption: "Folded configuration: alternating panel orientations reveal the linkage structure and the platform beneath it." },
-      { label: "Play motion study", type: "video", src: "assets/solar-panel-unit.mp4", poster: "assets/solar-video-preview.png", alt: "Animation of the folding frame and corresponding solar-panel movement", caption: "Motion study, approximately 4 seconds. The upper view isolates the frame; the lower view includes the panels. Use the player controls to play, pause or scrub." }
+      { label: "Motion study", type: "video", autoplay: true, src: "assets/solar-panel-unit.mp4?v=2", poster: "assets/solar-video-preview.png?v=2", alt: "Updated solar panel array unfolding and folding at 1.5 times speed", caption: "Updated panel animation at 1.5× speed, with shortened endpoint holds. The approximately 2.8-second unfold–fold cycle repeats automatically; use the controls to pause or scrub." }
     ],
     sections: [
       { title: "Design focus", text: "Link the motion of repeated structural units so that the panel array can be examined in expanded and folded states. The frame and panel views make the movement easier to inspect at two levels of detail." },
@@ -37,7 +37,7 @@ const projects = {
       { title: "Motion as a design tool", text: "The animation complements the still images by showing the transition between configurations. It provides a visual basis for later checks of clearances, hinge travel and actuation requirements." },
       { title: "Project material", text: "Two CAD configuration views and a short assembly animation. Power generation, deployed stiffness and flight-endurance measurements are outside the supplied material." }
     ],
-    links: [{label:"Open unfolding & folding GIF",href:"assets/solar-unfold-fold.gif"},{label:"Open original motion study",href:"assets/solar-panel-unit.mp4"}]
+    links: [{label:"Open unfolding & folding GIF",href:"assets/solar-unfold-fold.gif?v=2"},{label:"Open unfolding & folding video",href:"assets/solar-panel-unit.mp4?v=2"}]
   },
   aircraft: {
     label: "03 / Aerospace / CAD & structural analysis",
