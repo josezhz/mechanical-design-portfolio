@@ -2,21 +2,22 @@
 
 const projects = {
   underwater: {
-    label: "01 / Robotics / Assembly study",
-    title: "Underwater robotic platform",
-    intro: "An integrated CAD assembly bringing together the frame, thrusters, equipment enclosures and a front-mounted gripper. Two viewpoints reveal the mechanical packaging above and below the platform.",
-    tags: ["CAD assembly", "Component packaging", "Manipulator integration"],
+    label: "01 / Robotics / AUV subsystem design",
+    title: "AUV: soft gripper & hydrophone unit",
+    intro: "For this autonomous underwater vehicle (AUV), I designed the soft gripper and hydrophone unit. The CAD views present my subsystem designs in the context of the complete vehicle assembly.",
+    contribution: "Design of the soft gripper and hydrophone unit.",
+    tags: ["Soft gripper design", "Hydrophone unit design", "AUV subsystems"],
     media: [
-      { label: "Front assembly", type: "cad", src: "assets/underwater-front.png", alt: "Front isometric view of an underwater robot with distributed thrusters and a gripper", caption: "Front isometric view: the upper housing, cylindrical body, external frame and gripper are visible together." },
+      { label: "Front assembly", type: "cad", src: "assets/underwater-front.png", alt: "Front isometric view of an AUV with distributed thrusters and a soft gripper", caption: "Front isometric view of the complete AUV, including the front-mounted soft gripper I designed." },
       { label: "Underside assembly", type: "cad", src: "assets/underwater-underside.png", alt: "Underside view revealing equipment enclosures, thrusters and lower frame", caption: "Underside view: component mounting and the arrangement of equipment beneath the primary frame." }
     ],
     sections: [
-      { title: "Design focus", text: "The assembly places propulsion and task hardware around a central body. The model makes the spatial relationship between the frame, enclosures, thrusters and front gripper visible." },
-      { title: "What the views show", items: ["Distributed thruster mounts around the external frame.", "Cylindrical and rectangular equipment enclosures.", "A front gripper and supporting mechanism integrated below the body."] },
+      { title: "My design responsibilities", items: ["Soft gripper — mechanical design.", "Hydrophone unit — mechanical design."] },
+      { title: "What the views show", items: ["Distributed thruster mounts around the external frame.", "Cylindrical and rectangular equipment enclosures.", "The soft gripper and supporting mechanism integrated below the body."] },
       { title: "Mechanical considerations", text: "The layout invites review of mounting interfaces, access to internal equipment, gripper clearance and the space required by each thruster. These are considerations for further design development." },
       { title: "Project material", text: "Two SolidWorks assembly screenshots. The imagery records the assembly configuration; underwater test results and detailed performance data are not part of this preliminary case study." }
     ],
-    note: "Shown as an assembly design study. Project responsibilities and team credits can be expanded in a later portfolio revision.",
+    note: "My contribution to the AUV project was the design of the soft gripper and hydrophone unit. The complete vehicle assembly is shown to provide context for those designs.",
     links: [{label:"Open original front view",href:"assets/underwater-front.png"}]
   },
   solar: {
@@ -165,7 +166,13 @@ function openProject(key, source) {
     }
     grid.append(article);
   });
-  content.append(heading, tags, stage, controls, caption, grid);
+  content.append(heading);
+  if (project.contribution) {
+    const contribution = element("div", "project-contribution");
+    contribution.append(element("p", "eyebrow", "My contribution"), element("strong", "", project.contribution));
+    content.append(contribution);
+  }
+  content.append(tags, stage, controls, caption, grid);
   if (project.note) content.append(element("p", "detail-note", project.note));
   const actions = element("div", "dialog-actions");
   project.links.forEach((link, i) => {

@@ -11,3 +11,5 @@ dialog{width:min(1060px,calc(100% - 40px));max-height:calc(100dvh - 50px);border
 /* Keep CAD screenshots at their cropped source proportions at every breakpoint. */
 .project-image-link{aspect-ratio:1.66}.hero-cad{flex:0 0 auto;aspect-ratio:1.66;max-height:none}.hero-cad img{width:119%;height:108%;left:-18.2%;top:-4%;object-fit:fill}
 @media print{.site-header nav,.filters,.button,.image-action,.round-link,.text-link,dialog,.fallback-projects{display:none!important}.hero,.section-shell{break-inside:avoid}.hero{min-height:0}.project-grid{grid-template-columns:1fr 1fr}.analysis-section{background:#f3f2ed;color:#20251f}.analysis-copy>p:not(.eyebrow),.analysis-stat small,.analysis-detail>.eyebrow,.analysis-copy>.eyebrow,.analysis-note{color:#444}.site-footer{font-size:9px}}
+
+.project-contribution{margin-top:22px;padding:16px 18px;border-left:3px solid var(--green);background:#e7ebdf}.project-contribution .eyebrow{color:#536147;margin-bottom:5px}.project-contribution strong{font-size:15px;line-height:1.5;font-weight:600}

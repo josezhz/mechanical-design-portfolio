@@ -4,7 +4,7 @@ A dependency-free static portfolio presenting four mechanical design studies. Bu
 
 ## Included
 
-- Underwater robotic platform: two CAD assembly views.
+- Autonomous underwater vehicle (AUV): two CAD assembly views highlighting Zhang Haozhe’s design of the soft gripper and hydrophone unit.
 - Deployable solar array: expanded/folded views and a motion study.
 - X-525 aircraft: rendering, animation, three-view drawing and downloadable report.
 - Micro-drone iterations: annotated V1/V2 hardware comparison.
@@ -40,7 +40,7 @@ The GitHub profile is `https://github.com/josezhz`. There is no invented email a
 
 ## Content and attribution
 
-This is a preliminary edition based on the supplied project materials. Detailed team credits, dates and individual responsibilities can be added when available. The site does not assert sole authorship of unspecified team projects.
+This is a preliminary edition based on the supplied project materials. Zhang Haozhe confirmed responsibility for designing the AUV’s soft gripper and hydrophone unit. The full AUV assembly provides context for those contributions. Other team credits, dates and individual responsibilities can be added when available; the site does not assert sole authorship of unspecified team projects.
 
 The X-525 numerical details come from `Aircraft Design_Zhang Haozhe.pdf`, principally pages 3–9. Reported FEA outputs are described as model results, with their stated assumptions; they are not presented as flight-test results or certification evidence.
 
