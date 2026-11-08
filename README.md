@@ -2,6 +2,8 @@
 
 A dependency-free static portfolio presenting four mechanical design studies. Built for GitHub Pages with relative asset paths and no build step.
 
+[View the live portfolio](https://josezhz.github.io/mechanical-design-portfolio/) · [GitHub repository](https://github.com/josezhz/mechanical-design-portfolio)
+
 ## Included
 
 - Autonomous underwater vehicle (AUV): two CAD assembly views highlighting Zhang Haozhe’s design of the soft gripper and hydrophone unit.
