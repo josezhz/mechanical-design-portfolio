@@ -26,6 +26,7 @@ const projects = {
     intro: "A folding panel assembly built around a repeating hinged frame. Expanded and folded configurations explore the relationship between panel arrangement, supporting links and the platform below.",
     tags: ["Deployable mechanism", "Repeated linkages", "CAD motion study"],
     media: [
+      { label: "Unfold–fold loop", type: "gif", src: "assets/solar-unfold-fold.gif", poster: "assets/solar-loop-poster.png", alt: "Solar-panel mechanism unfolding and folding in a continuous loop", caption: "Continuous unfold–fold cycle, approximately 8 seconds. The original motion plays forward and then backward; the upper view shows the frame and the lower view includes the panels." },
       { label: "Expanded", type: "cad", src: "assets/solar-expanded.png", alt: "Expanded array of blue solar panels supported above a quadrotor frame", caption: "Expanded configuration: repeated panels form a broad surface above the supporting platform." },
       { label: "Folded", type: "cad", src: "assets/solar-folded.png", alt: "Folded panel array revealing the linked frame and quadrotor platform", caption: "Folded configuration: alternating panel orientations reveal the linkage structure and the platform beneath it." },
       { label: "Play motion study", type: "video", src: "assets/solar-panel-unit.mp4", poster: "assets/solar-video-preview.png", alt: "Animation of the folding frame and corresponding solar-panel movement", caption: "Motion study, approximately 4 seconds. The upper view isolates the frame; the lower view includes the panels. Use the player controls to play, pause or scrub." }
@@ -36,7 +37,7 @@ const projects = {
       { title: "Motion as a design tool", text: "The animation complements the still images by showing the transition between configurations. It provides a visual basis for later checks of clearances, hinge travel and actuation requirements." },
       { title: "Project material", text: "Two CAD configuration views and a short assembly animation. Power generation, deployed stiffness and flight-endurance measurements are outside the supplied material." }
     ],
-    links: [{label:"Open motion study",href:"assets/solar-panel-unit.mp4"}]
+    links: [{label:"Open unfolding & folding GIF",href:"assets/solar-unfold-fold.gif"},{label:"Open original motion study",href:"assets/solar-panel-unit.mp4"}]
   },
   aircraft: {
     label: "03 / Aerospace / CAD & structural analysis",
@@ -44,8 +45,8 @@ const projects = {
     intro: "A preliminary aircraft design study connecting overall layout and control surfaces with the wing and fuselage structures. The report documents the geometry, structural configuration, modelling assumptions and finite element results.",
     tags: ["Aircraft layout", "Structural design", "ANSYS Mechanical APDL"],
     media: [
+      { label: "Aircraft animation", type: "video", autoplay: true, src: "assets/x-525.mp4", poster: "assets/aircraft-preview.png", alt: "Looping turntable animation of the X-525 aircraft model", caption: "The aircraft animation plays automatically in a muted loop. Use the player controls to pause or inspect a particular view." },
       { label: "Aircraft render", type: "image", src: "assets/aircraft-preview.png", alt: "X-525 aircraft CAD model showing twin engines, swept wings and landing gear", caption: "X-525 CAD model. This image is a frame from the supplied aircraft animation." },
-      { label: "Play animation", type: "video", src: "assets/x-525.mp4", poster: "assets/aircraft-preview.png", alt: "Short animation of the X-525 aircraft model", caption: "Aircraft animation, approximately 6 seconds. Use the player controls to inspect the model in motion." },
       { label: "Three-view drawing", type: "drawing", src: "assets/aircraft-drawing.png", alt: "Page 2 of the design report showing dimensioned side, front and plan views of the X-525", caption: "Three-view drawing from page 2 of the aircraft report. Open the PDF for the full-resolution drawing and dimensions." }
     ],
     sections: [
@@ -80,6 +81,42 @@ const dialog = document.getElementById("project-dialog");
 const content = document.getElementById("dialog-content");
 let opener = null;
 let currentProject = null;
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+function setMotionPaused(media, button, paused) {
+  media.dataset.motionPaused = String(paused);
+  button.textContent = paused ? "Play motion" : "Pause motion";
+  button.setAttribute("aria-label", `${paused ? "Play" : "Pause"} ${button.dataset.motionName}`);
+  if (media.tagName === "VIDEO") {
+    media.muted = true;
+    if (paused) media.pause();
+    else media.play().catch(() => setMotionPaused(media, button, true));
+  } else {
+    media.src = paused ? media.dataset.motionPoster : media.dataset.motionSrc;
+  }
+}
+
+function initializeMotion(scope = document) {
+  scope.querySelectorAll("[data-motion-target]").forEach(button => {
+    if (button.dataset.motionBound) return;
+    const media = document.getElementById(button.dataset.motionTarget);
+    if (!media) return;
+    button.dataset.motionBound = "true";
+    button.addEventListener("click", () => setMotionPaused(media, button, media.dataset.motionPaused !== "true"));
+    setMotionPaused(media, button, reducedMotion.matches);
+  });
+}
+
+reducedMotion.addEventListener("change", () => {
+  document.querySelectorAll("[data-motion-target]").forEach(button => {
+    const media = document.getElementById(button.dataset.motionTarget);
+    if (media) setMotionPaused(media, button, reducedMotion.matches);
+  });
+  dialog.querySelectorAll("video[data-auto-motion]").forEach(video => {
+    if (reducedMotion.matches) video.pause();
+    else video.play().catch(() => {});
+  });
+});
 
 function element(tag, className, text) {
   const node = document.createElement(tag);
@@ -100,11 +137,33 @@ function showMedia(index) {
     video.preload = "metadata";
     video.poster = media.poster;
     video.setAttribute("aria-label", media.alt);
+    if (media.autoplay) {
+      video.dataset.autoMotion = "true";
+      video.muted = true;
+      video.loop = true;
+      video.autoplay = !reducedMotion.matches;
+    }
     const source = element("source");
     source.src = media.src;
     source.type = "video/mp4";
     video.append(source, document.createTextNode("Your browser does not support embedded video. Use the direct video link below."));
     stage.append(video);
+    if (media.autoplay && !reducedMotion.matches) video.play().catch(() => {});
+  } else if (media.type === "gif") {
+    const motion = element("div", "dialog-motion");
+    const image = element("img");
+    image.id = "dialog-solar-loop";
+    image.src = media.src;
+    image.alt = media.alt;
+    image.dataset.motionSrc = media.src;
+    image.dataset.motionPoster = media.poster;
+    const button = element("button", "motion-toggle", "Pause motion");
+    button.type = "button";
+    button.dataset.motionTarget = image.id;
+    button.dataset.motionName = "solar panel animation";
+    motion.append(image, button);
+    stage.append(motion);
+    initializeMotion(motion);
   } else {
     const image = element("img");
     image.src = media.src;
@@ -224,3 +283,5 @@ document.querySelectorAll("[data-filter]").forEach(button => {
     document.getElementById("project-count").textContent = `Showing ${count} project${count === 1 ? "" : "s"}`;
   });
 });
+
+initializeMotion();
