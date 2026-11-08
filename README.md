@@ -8,7 +8,7 @@ A dependency-free static portfolio presenting four mechanical design studies. Bu
 
 - Autonomous underwater vehicle (AUV): two CAD assembly views highlighting Zhang Haozhe’s design of the soft gripper and hydrophone unit.
 - Deployable solar array: drone integration view beside an automatically looping unfold–fold GIF, plus configuration views and a matching looping video.
-- X-525 aircraft: muted looping animation shown directly on the project card, plus a rendering, three-view drawing and downloadable report.
+- X-525 aircraft: muted looping animation shown directly on the project card, plus four control-surface animations (rudder, flap, elevator and aileron), a rendering, three-view drawing and downloadable report.
 - Micro-drone iterations: annotated V1/V2 hardware comparison.
 - Responsive layouts, project filters, accessible native project dialogs, native video controls, reduced-motion support and useful links without JavaScript.
 
@@ -49,5 +49,7 @@ The X-525 numerical details come from `Aircraft Design_Zhang Haozhe.pdf`, princi
 Project-card animations run without opening a dialog. Each has a pause/play button, and reduced-motion preferences start the animations paused. The solar GIF uses the updated `WithSolarPanels.mp4` clip, with long static holds trimmed. Its motion plays forward and backward at 12 frames per second (1.5× the source’s 8 fps), making a 2.83-second cycle with approximately 0.16–0.17 seconds at each turnaround. The downloadable solar MP4 uses the same cycle. The aircraft uses muted, inline, looping MP4 playback for image quality and download efficiency.
 
 Original screenshot pixels are preserved; the webpage crops application chrome with CSS. Video files are H.264 MP4 encodes with audio retained and fast-start metadata. The PDF is unchanged. The aircraft preview is extracted from the supplied video; the three-view drawing is rendered from page 2 of the report.
+
+The four control-surface clips are displayed together on the homepage and are individually selectable in the aircraft project viewer. They retain the supplied motion timing at 30 fps, use 720-pixel-high H.264 encodes with AAC audio, and play muted in a loop. Each has a pause button and a direct video link; reduced-motion preferences start playback paused.
 
 Project-media rights remain with their respective owners. No open-source licence is asserted for the supplied imagery or report.
