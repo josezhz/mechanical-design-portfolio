@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f2ed">
+  <meta name="description" content="Zhang Haozhe's mechanical design portfolio: underwater robotics, deployable solar mechanisms, aircraft structures and micro-drone development.">
+  <meta property="og:title" content="Zhang Haozhe — Mechanical Design Portfolio">
+  <meta property="og:description" content="A selection of mechanical design studies, from integrated assemblies to moving mechanisms and aircraft structures.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/underwater-front.png">
+  <title>Zhang Haozhe — Mechanical Design Portfolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="identity" href="#" aria-label="Zhang Haozhe, back to top"><span class="monogram" aria-hidden="true">HZ<span>↗</span></span><span>Zhang Haozhe<small>Mechanical design portfolio</small></span></a>
+    <nav aria-label="Main navigation"><a href="#work">Selected work <span>04</span></a><a href="#approach">Approach</a><a class="nav-contact" href="#contact">Connect <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> A collection of design studies</p>
+        <h1 id="hero-heading">Making ideas<br><em>mechanical.</em></h1>
+        <p class="hero-description">Exploring how parts come together, structures carry loads, and mechanisms move.</p>
+        <a class="button primary" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
+        <div class="hero-disciplines"><span>Robotics</span><span>Mechanisms</span><span>Aerospace</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="technical-label"><span><span class="crosshair" aria-hidden="true">+</span> Assembly study / 01</span><span>Isometric view</span></div>
+        <div class="cad-crop hero-cad"><img src="assets/underwater-front.png" width="2597" height="1425" alt="Underwater robot CAD assembly with a purple upper housing, black frame, multiple thrusters and a front gripper" fetchpriority="high"></div>
+        <div class="hero-caption"><span>Underwater robotic platform<small>Mechanical packaging & system integration</small></span><a href="#underwater" class="round-link" aria-label="Explore the underwater robotic platform">↗</a></div>
+      </div>
+    </section>
+    <div class="index-strip"><span>Form. Motion. Structure.</span><span>CAD assemblies <i>/</i> Mechanism studies <i>/</i> Structural analysis</span><span>Portfolio / 2026</span></div>
+
+    <section class="work-section section-shell" id="work" aria-labelledby="work-heading">
+      <div class="section-heading"><div><p class="eyebrow">01 — Selected work</p><h2 id="work-heading">A closer look at<br>the engineering.</h2></div><p>Four studies across different scales<br>and mechanical challenges.</p></div>
+      <div class="work-toolbar"><div class="filters" role="group" aria-label="Filter projects"><button type="button" data-filter="all" aria-pressed="true">All projects <span>04</span></button><button type="button" data-filter="robotics" aria-pressed="false">Robotics</button><button type="button" data-filter="mechanisms" aria-pressed="false">Mechanisms</button><button type="button" data-filter="aerospace" aria-pressed="false">Aerospace</button></div><p id="project-count" class="project-count" aria-live="polite">Showing 4 projects</p></div>
+      <div class="project-grid">
+        <article class="project-card" id="underwater" data-category="robotics">
+          <a href="#underwater-detail" class="project-image-link" data-project="underwater" aria-label="View Underwater robotic platform project"><span class="card-number">01 / ROBOTICS</span><div class="cad-crop card-cad"><img src="assets/underwater-underside.png" alt="Underside view of the underwater robot showing thruster placement, gripper and equipment enclosures" width="2597" height="1425" loading="lazy"></div><span class="image-action" aria-hidden="true">↗</span></a>
+          <div class="project-meta"><span>Assembly design</span><span>CAD study</span></div>
+          <h3><a href="#underwater-detail" data-project="underwater">Underwater robotic platform</a></h3>
+          <p>Bringing propulsion, enclosures and a manipulator into one compact mechanical assembly.</p>
+          <a class="text-link" href="#underwater-detail" data-project="underwater">Explore the assembly <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="project-card" id="solar" data-category="mechanisms">
+          <a href="#solar-detail" class="project-image-link" data-project="solar" aria-label="View Deployable solar array project"><span class="card-number">02 / MECHANISMS</span><div class="cad-crop card-cad"><img src="assets/solar-expanded.png" alt="Expanded blue solar-panel array supported by a folding frame above a quadrotor platform" width="2597" height="1425" loading="lazy"></div><span class="image-action" aria-hidden="true">↗</span></a>
+          <div class="project-meta"><span>Deployable structures</span><span>Motion study</span></div>
+          <h3><a href="#solar-detail" data-project="solar">Deployable solar array</a></h3>
+          <p>A repeating hinged frame that brings panel deployment and compact packaging into the same mechanism.</p>
+          <a class="text-link" href="#solar-detail" data-project="solar">See the mechanism <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="project-card" id="aircraft" data-category="aerospace">
+          <a href="#aircraft-detail" class="project-image-link aircraft-image" data-project="aircraft" aria-label="View X-525 aircraft design project"><span class="card-number">03 / AEROSPACE</span><img src="assets/aircraft-preview.png" alt="X-525 twin-engine aircraft CAD rendering with landing gear deployed" width="1260" height="540" loading="lazy"><span class="image-action" aria-hidden="true">↗</span></a>
+          <div class="project-meta"><span>Airframe & structures</span><span>CAD + FEA</span></div>
+          <h3><a href="#aircraft-detail" data-project="aircraft">X-525 aircraft design</a></h3>
+          <p>From aircraft layout and control surfaces to wing loading and fuselage structural analysis.</p>
+          <a class="text-link" href="#aircraft-detail" data-project="aircraft">Read the design study <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="project-card" id="micro-drone" data-category="robotics">
+          <a href="#micro-detail" class="project-image-link micro-image" data-project="micro" aria-label="View Micro-drone iterations project"><span class="card-number">04 / ROBOTICS</span><img src="assets/micro-drone-comparison.png" alt="Six labelled photographs comparing V1 and V2 micro-drone layouts, including motors, battery mounts, IR LEDs and flight electronics" width="581" height="363" loading="lazy"><span class="image-action" aria-hidden="true">↗</span></a>
+          <div class="project-meta"><span>Component integration</span><span>Prototype comparison</span></div>
+          <h3><a href="#micro-detail" data-project="micro">Micro-drone iterations</a></h3>
+          <p>Two hardware configurations exploring motor selection, electronics placement and battery mounting.</p>
+          <a class="text-link" href="#micro-detail" data-project="micro">Compare the iterations <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="analysis-section section-shell" aria-labelledby="analysis-heading">
+      <div class="analysis-copy"><p class="eyebrow">Inside the work / X-525</p><h2 id="analysis-heading">Geometry is<br>only the beginning.</h2><p>The aircraft study connects the outer form to an internal load-bearing structure: wing spars, ribs and stringers, followed by fuselage frames and longerons.</p><p>ANSYS Mechanical APDL models examine wing bending at 2.5g and the displacement of a pressurized fuselage section.</p><a class="button light" href="assets/aircraft-design-report.pdf" target="_blank" rel="noopener">Open the design report <span>PDF ↗</span></a></div>
+      <div class="analysis-detail"><p class="eyebrow">Selected model details</p><div class="analysis-stat"><strong>2.5<span>g</span></strong><p>Wing load case<small>Fixed-root model with loads applied at rib locations</small></p></div><div class="analysis-stat"><strong>24</strong><p>Fuselage longerons<small>Distributed at 15° intervals around the cross-section</small></p></div><div class="analysis-stat"><strong>5<span>m</span></strong><p>Fuselage section<small>Quarter-section model using two symmetry planes</small></p></div><p class="analysis-note">Design-study parameters from the supplied report. Simulation results describe the stated models and load cases.</p></div>
+    </section>
+
+    <section id="approach" class="approach section-shell" aria-labelledby="approach-heading"><div class="section-heading"><div><p class="eyebrow">02 — Design approach</p><h2 id="approach-heading">From an arrangement<br>to a working idea.</h2></div><p>The questions that connect<br>these different projects.</p></div><div class="approach-grid"><article><span class="step-number">01</span><h3>Bring the parts together.</h3><p>Consider the structure, component interfaces and space around moving parts. Use the assembly to make their relationships visible.</p><span class="method-tag">Layout & integration</span></article><article><span class="step-number">02</span><h3>Explore the movement.</h3><p>Compare configurations and inspect the motion of linked components, from folding panels to aircraft control surfaces.</p><span class="method-tag">Kinematics & iteration</span></article><article><span class="step-number">03</span><h3>Understand the structure.</h3><p>Translate geometry into a defined load case. Make assumptions visible, inspect deformation and identify areas for further evaluation.</p><span class="method-tag">Modelling & analysis</span></article></div></section>
+
+    <section id="contact" class="contact section-shell" aria-labelledby="contact-heading"><div><p class="eyebrow">03 — Connect</p><h2 id="contact-heading">Let’s talk<br><em>mechanical design.</em></h2></div><div class="contact-detail"><p>Zhang Haozhe</p><span>Robotics · Mechanisms · Aircraft structures</span><a class="button primary" href="https://github.com/josezhz" target="_blank" rel="noopener">Find me on GitHub <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="site-footer"><span>© 2026 Zhang Haozhe</span><span>Mechanical design portfolio · Preliminary edition</span><a href="#">Back to top ↑</a></footer>
+
+  <dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span id="dialog-label" class="eyebrow"></span><button type="button" id="close-dialog" aria-label="Close project">Close <span aria-hidden="true">×</span></button></div><div id="dialog-content"></div></dialog>
+
+  <section class="fallback-projects" aria-label="Project details without JavaScript">
+    <article id="underwater-detail"><h2>Underwater robotic platform</h2><p>CAD assembly views show an external frame, distributed thrusters, cylindrical enclosures and a front gripper. The two views highlight packaging and component relationships.</p><a href="assets/underwater-front.png">Front view</a> · <a href="assets/underwater-underside.png">Underside view</a></article>
+    <article id="solar-detail"><h2>Deployable solar array</h2><p>Expanded and folded panel configurations are presented alongside a short mechanism animation.</p><a href="assets/solar-panel-unit.mp4">Watch the motion study</a> · <a href="assets/solar-folded.png">Folded view</a></article>
+    <article id="aircraft-detail"><h2>X-525 aircraft design</h2><p>Aircraft layout, wing structures, fuselage construction and finite element models are documented in the supplied report.</p><a href="assets/aircraft-design-report.pdf">Read the report</a> · <a href="assets/x-525.mp4">Watch the aircraft animation</a></article>
+    <article id="micro-detail"><h2>Micro-drone iterations</h2><p>The supplied comparison labels V1 with brushed motors and a 1S LiPo battery, and V2 with brushless motors, an ESP32 receiver and flight controller.</p><a href="assets/micro-drone-comparison.png">View the comparison</a></article>
+  </section>
+</body>
+</html>
